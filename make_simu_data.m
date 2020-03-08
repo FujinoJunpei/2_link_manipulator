@@ -2,11 +2,13 @@ function make_simu_data(n_samples);
 
 t = (0:0.04:10)';
 len = size(t);
+l = len(1);
 
-xy_tau = zeros([n_samples*len,4]);
+xy_tau = zeros([n_samples*l,4]);
 
 for k=1:n_samples
-
+    P = ['sample:',num2str(k)];
+    disp(P);
     x_end = 2;
     y_end = 2;
     while (x_end^2 + y_end^2 > 1)
@@ -21,9 +23,9 @@ for k=1:n_samples
     in = in.setExternalInput([t,u1,u2]);
     out = sim(in);
 
-    xy_tau((k-1)*len + 1:(k-1)*len + len, 1) = [t*x_end/10];
-    xy_tau((k-1)*len + 1:(k-1)*len + len, 2) = [0.01 + t*y_end/10];
-    xy_tau((k-1)*len + 1:(k-1)*len + len, 3:4) = out.yout;
+    xy_tau((k-1)*l + 1:(k-1)*l + l, 1) = [1 + t*x_end/10];
+    xy_tau((k-1)*l + 1:(k-1)*l + l, 2) = [t*y_end/10];
+    xy_tau((k-1)*l + 1:(k-1)*l + l, 3:4) = out.yout;
     writematrix(xy_tau, 'train_data.csv')
 
 %    brain_tau_to_xy(out.yout,x_end,y_end)
