@@ -32,9 +32,9 @@ th2=X(2);
 %% Trajectory information
 
 %x_des= A + R1*cos(w*t)*cos(r)-R2*sin(w*t)*sin(r);
-x_des= A + t*x_end/10;
+x_des= 1 + t*x_end/10;
 %y_des= B + R1*cos(w*t)*sin(r)+R2*sin(w*t)*cos(r);
-y_des= B + 0.01 + t*y_end/10;
+y_des= t*y_end/10;
 
 %xd_des= -R1*w*sin(w*t)*cos(r)-R2*w*cos(w*t)*sin(r);
 xd_des= x_end/10;

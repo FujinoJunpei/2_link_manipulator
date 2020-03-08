@@ -1,6 +1,6 @@
 function make_simu_data(n_samples);
 
-t = (0:0.001:10)';
+t = (0:0.04:10)';
 len = size(t);
 
 xy_tau = zeros([n_samples*len,4]);
@@ -9,9 +9,9 @@ for k=1:n_samples
 
     x_end = 2;
     y_end = 2;
-    while (x_end^2 + (y_end + 0.01)^2 > 4)% | (abs(x_end) < 0.6)
-        x_end = -2 + rand*4;
-        y_end = -2 + rand*4 - 0.01;
+    while (x_end^2 + y_end^2 > 1)
+        x_end = -1 + rand*2;
+        y_end = -1 + rand*2;
     end
 
     open_system('solve_tau_block');
@@ -26,5 +26,5 @@ for k=1:n_samples
     xy_tau((k-1)*len + 1:(k-1)*len + len, 3:4) = out.yout;
     writematrix(xy_tau, 'train_data.csv')
 
-%    brain_tau_to_xy(out.yout,x_end,y_end);
+%    brain_tau_to_xy(out.yout,x_end,y_end)
 end

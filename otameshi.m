@@ -7,9 +7,9 @@ len = size(t);
 
 x_end = 2;
 y_end = 2;
-while (x_end^2 + (y_end + 0.01)^2 > 4)
-    x_end = -2 + rand*4;
-    y_end = -2 + rand*4 - 0.01;
+while (x_end^2 + y_end^2 > 1)
+    x_end = -1 + rand*2;
+    y_end = -1 + rand*2;
 end
 
 open_system('output_X');

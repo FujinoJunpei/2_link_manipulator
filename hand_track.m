@@ -12,9 +12,11 @@ function hand_track(t,X,x_end,y_end)
         location(i,:)=[x2,y2];
     end
     plot(location(:,1),location(:,2))
+    xlim([0 2])
+    ylim([-1 1])
 
     hold on
-    x = linspace(0,x_end);
-    y = linspace(0.01,y_end+0.01);
+    x = linspace(1,1 + x_end);
+    y = linspace(0,y_end);
     plot(x,y)
     hold off
