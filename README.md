@@ -17,7 +17,7 @@ otameshi
 
 ### 教師データを作るとき(逆モデル)
 
-以下を実行。するとディレクトリ内にcsvファイルができる。csvの1列目2列目がx(t),y(t)のシークエンス。3列目4列目がtau(t)のシークエンス。csvの行数はlen × n_samples。ただしlenは１つのデータの長さ。デフォルトではlen=251。詳しくはmake_simu_data.mを参照。
+以下を実行。するとディレクトリ内にcsvファイルができる。csvの1列目2列目が(x_end、y_end)。ただし、(x_end, y_end)は単位円内の点。3列目4列目がtau(t)のシークエンス。csvの行数はlen × n_samples。ただしlenは１つのデータの長さ。デフォルトではlen=251。詳しくはmake_simu_data.mを参照。
 ```bash
 %n_samplesには作る教師データのデータ数を入れる。
 make_simu_data(n_samples)
