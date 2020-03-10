@@ -23,8 +23,8 @@ for k=1:n_samples
     in = in.setExternalInput([t,u1,u2]);
     out = sim(in);
 
-    xy_tau((k-1)*l + 1:(k-1)*l + l, 1) = [1 + t*x_end/10];
-    xy_tau((k-1)*l + 1:(k-1)*l + l, 2) = [t*y_end/10];
+    xy_tau((k-1)*l + 1:(k-1)*l + l, 1) = u1;
+    xy_tau((k-1)*l + 1:(k-1)*l + l, 2) = u2;
     xy_tau((k-1)*l + 1:(k-1)*l + l, 3:4) = out.yout;
     writematrix(xy_tau, 'train_data.csv')
 
