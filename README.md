@@ -27,6 +27,6 @@ make_simu_data(n_samples)
 
 以下を実行。すると、そのtau(t)のシークエンスに従ってトルクをかけたときの手先の軌道が青でプロットされ、答えの線分が赤色でプロットされる。
 ```bash
-%tauがtau(t)のシークエンス,(x_end,y_end)が答え線分の(0,0)以外の端点
+%tauがtau(t)のシークエンス,(1+x_end, y_end)が答え線分の(1,0)以外の端点
 brain_tau_to_xy(tau,x_end,y_end)
 ```
