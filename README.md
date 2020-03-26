@@ -30,3 +30,12 @@ make_simu_data(n_samples)
 %tauがtau(t)のシークエンス,(1+x_end, y_end)が答え線分の(1,0)以外の端点
 brain_tau_to_xy(tau,x_end,y_end)
 ```
+
+### ラベル(答え)のtau(t)と予測して得たtau(t)があり、比較したいとき
+
+ans.csvを251 × 2のラベルのtau(t)とし、prediction.csvを251 × 2の予測して得たtau(t)として以下を実行。すると、その予測して得たtau(t)のシークエンスに従ってトルクをかけたときの手先の軌道が青でプロットされ、答えの軌道が赤色でプロットされる。
+```bash
+a = readmatrix("prediction.csv");
+b = readmatrix("ans.csv");
+tau_tau_to_xy(a,b)
+```
