@@ -1,4 +1,4 @@
-function make_simu_data(n_samples);
+function make_simu_data(n_samples)
 
 t = (0:0.04:10)';
 len = size(t);
