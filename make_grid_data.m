@@ -20,8 +20,8 @@ function make_simu_data(grid)
             q = double(q) + 1; 
         end
 
-        x_end = -1 + (2/grid)*r - 1/grid
-        y_end = 1 - (2/grid)*q + 1/grid
+        x_end = -1 + (2/grid)*r - 1/grid;
+        y_end = 1 - (2/grid)*q + 1/grid;
 
         if (x_end^2 + y_end^2 <= 1)
             open_system('solve_tau_block');
