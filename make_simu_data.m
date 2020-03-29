@@ -26,7 +26,8 @@ for k=1:n_samples
     xy_tau((k-1)*l + 1:(k-1)*l + l, 1) = u1;
     xy_tau((k-1)*l + 1:(k-1)*l + l, 2) = u2;
     xy_tau((k-1)*l + 1:(k-1)*l + l, 3:4) = out.yout;
-    writematrix(xy_tau, 'train_data.csv')
 
 %    brain_tau_to_xy(out.yout,x_end,y_end)
 end
+
+writematrix(xy_tau, 'train_data.csv')
