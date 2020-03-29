@@ -1,4 +1,4 @@
-function make_simu_data(grid)
+function make_grid_data(grid)
 
     n_samples = grid*grid;
     t = (0:0.04:10)';
